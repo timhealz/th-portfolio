@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 3px #001972;
+}
+  .navbar .head {
+    padding-left: 10px;
+  }
+  .navbar div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .navbar .icon a {
+    color: #BBBBBB;
+    font-size: 40px;
+    padding-right: 10px;
+  }
+  .navbar a:hover {
+    color: #001972;
+}
