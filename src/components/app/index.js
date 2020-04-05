@@ -1,17 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+
+import Home from './home';
 import './app.css';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Under Construction...
-        </p>
-      </header>
+    <Route exact path="/" component={Home} />
     </div>
+    </BrowserRouter>
   );
 }
 
