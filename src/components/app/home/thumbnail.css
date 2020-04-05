@@ -1,4 +1,8 @@
+.projects {
+	margin: 10%;
+}
+
 .project-image {
 	width: auto;
-	max-width: 500px;
+	max-width: inherit;
 }
