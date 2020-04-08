@@ -18,14 +18,12 @@ body,
 }
 
 .cell {
-  position: relative;
-  background-size: cover;
-  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: auto;
   height: 100%;
   overflow: hidden;
-  color: #777777;
   text-transform: uppercase;
-  display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0px 10px 60px -10px rgba(0, 0, 0, 0.2);
@@ -133,7 +131,7 @@ body,
 }
 
 .header {
-  padding: 30px 70px 30px 70px;
+  padding: 30px 70px 30px 50px;
   height: auto;
   display: flex;
   align-items: center;

@@ -8,15 +8,17 @@ import data from './data.js'
 import Header from './selector.js'
 import { Grid, Slug, Fade } from 'mauerwerk'
 
-const Cell = ({ toggle, name, height, description, css, maximized }) => (
+const Cell = ({ toggle, name, height, description, image, maximized }) => (
   <div
     className="cell"
-    style={{ backgroundImage: css, cursor: !maximized ? 'pointer' : 'auto' }}
+    style={{ 
+        backgroundImage: `url(${process.env.PUBLIC_URL + 'images/' + image})`, 
+        cursor: !maximized ? 'pointer' : 'auto'
+    }}
     onClick={!maximized ? toggle : undefined}>
     <Fade show={maximized} delay={maximized ? 400 : 0}>
       <div className="details">
-        <Slug delay={600}>
-          <div className="circle" style={{ background: css }} />
+        <Slug delay={200}>
           <div className="close">
             <Icon type="close" style={{ cursor: 'pointer' }} onClick={toggle} />
           </div>
