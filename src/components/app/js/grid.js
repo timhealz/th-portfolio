@@ -11,7 +11,7 @@ import { Grid, Slug, Fade } from 'mauerwerk'
 const Cell = ({ toggle, name, height, description, image, maximized }) => (
   <div
     className="cell"
-    style={{ 
+    style={{
         backgroundImage: `url(${process.env.PUBLIC_URL + 'images/' + image})`, 
         cursor: !maximized ? 'pointer' : 'auto'
     }}

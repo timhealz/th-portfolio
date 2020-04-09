@@ -17,12 +17,6 @@ export default function({
       <Button type="primary" onClick={shuffle}>
         Shuffle
       </Button>
-      <Input
-        style={{ marginLeft: 15, minWidth: 130, maxWidth: 300 }}
-        suffix={<Icon type="search" style={{ color: 'rgba(0,0,0,.25)' }} />}
-        placeholder="input search text"
-        onChange={search}
-      />
       <Dropdown
         trigger={['click']}
         overlay={
@@ -53,8 +47,12 @@ export default function({
           {margin} px margin <Icon type="down" />
         </Button>
       </Dropdown>
-      <span style={{ marginLeft: 15 }}>Individual height</span>
-      <Switch style={{ marginLeft: 15 }} defaultChecked onChange={setHeight} />
+      <Input
+        style={{ marginLeft: 15, minWidth: 130, maxWidth: 300 }}
+        suffix={<Icon type="search" style={{ color: 'rgba(0,0,0,.25)' }} />}
+        placeholder="input search text"
+        onChange={search}
+      />
     </div>
   )
 }
