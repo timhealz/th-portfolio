@@ -1,8 +1,7 @@
-import React, { Component, useState } from 'react'
-import { render } from 'react-dom'
+import React, { useState } from 'react'
 import { useSpring, animated as a } from 'react-spring'
 
-import Header from './selector.js'
+import Selector from './selector.js'
 import cards from './cards.js'
 import '../css/grid.css'
 
@@ -14,20 +13,31 @@ function Card(props) {
     config: { mass: 5, tension: 500, friction: 80 }
     })
     return (
-        <div class="card" onClick={() => set(state => !state)}>
+        <div 
+            class="card"
+            onClick={() => set(state => !state)}
+            style={{ 
+                maxWidth: props.maxWidth,
+                maxHeight: props.maxHeight
+            }} 
+        >
             <a.div
                 class="c front" 
                 style={{ 
                     opacity,
                     transform: transform.interpolate(t => `${t} rotateX(180deg)`),
-                    backgroundImage: `url(${process.env.PUBLIC_URL + 'images/' + props.image})`
+                    backgroundImage: `url(${process.env.PUBLIC_URL + 'images/' + props.image})`,
+                    maxWidth: props.maxWidth,
+                    maxHeight: props.maxHeight
                 }} 
             />
             <a.div
                 class="c back"
                 style={{
                     opacity: opacity.interpolate(o => 1 - o),
-                    transform
+                    transform,
+                    maxWidth: props.maxWidth,
+                    maxHeight: props.maxHeight
                 }}
             >{props.title}
             </a.div>

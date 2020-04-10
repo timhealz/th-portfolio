@@ -1,9 +1,8 @@
 div.grid {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: row;
-    padding: 50px 50px 50px 50px;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 div.card {
@@ -13,11 +12,8 @@ div.card {
 
 .c {
   position: absolute;
-  max-width: 800px;
-  max-height: 404px;
   width: 100%;
   height: 100%;
-  padding: 10px 10px 10px 10px;
   cursor: pointer;
   will-change: transform, opacity;
 }
@@ -27,5 +23,5 @@ div.card {
     background-repeat: no-repeat;
 }
 .back {
-  background-color: white;
+    background-color: white;
 }
