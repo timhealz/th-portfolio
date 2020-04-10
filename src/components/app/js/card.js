@@ -1,11 +1,7 @@
-import React, { Component, useState } from 'react'
 import { render } from 'react-dom'
+import React, { useState } from 'react'
 import { useSpring, animated as a } from 'react-spring'
-
-import Header from './selector.js'
-import data from './data.js'
-
-import '../css/grid.css'
+import '../css/card.css'
 
 function Card(props) {
   const [flipped, set] = useState(true)
@@ -22,16 +18,4 @@ function Card(props) {
   )
 }
 
-class Grid extends Component {
-  state = { data }
-  render() {
-    return (
-        <div class="grid">
-            <Card />
-            <Card />
-        </div>
-    )
-  }
-}
-
-export default Grid;
+export default Card;

@@ -1,16 +1,17 @@
 .navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: solid 3px #BBBBBB;
-  padding: 5px 10px 5px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 3px #BBBBBB;
+    padding: 5px 10px 5px 10px;
+    background-color: white;
 }
-  .navbar .icon a {
-    color: #BBBBBB;
-    font-size: 40px;
-    padding-right: 10px;
+    .navbar .icon a {
+        color: #BBBBBB;
+        font-size: 40px;
+        padding-right: 10px;
   }
-  .navbar a:hover {
-    color: #001972;
+    .navbar a:hover {
+        color: #001972;
 }
