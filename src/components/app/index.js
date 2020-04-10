@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import Grid from './js/grid.js';
-import './app.css';
+import './css/app.css';
 
 function App() {
   return (

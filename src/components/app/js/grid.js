@@ -35,14 +35,12 @@ function Card(props) {
     )
 }
 
-class Grid extends Component {
-    render() {
-        return (
-            <div class="grid">
-                {cards.map((card) => <Card {...card} />)}
-            </div>
-        )
-  }
+function Grid() {
+    return (
+        <div class="grid">
+            {cards.map((card) => <Card {...card} />)}
+        </div>
+    )
 }
 
 export default Grid;
