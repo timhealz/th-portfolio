@@ -23,7 +23,6 @@ div.card {
 }
 
 .front {
-    background-image: url(../images/bootstrapped_digits.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
