@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { useSpring, animated as a } from 'react-spring'
 
 import Header from './selector.js'
-import data from './data.js'
+import cards from './cards.js'
 import '../css/grid.css'
 
 function Card(props) {
@@ -16,20 +16,18 @@ function Card(props) {
   return (
     <div class="card" onClick={() => set(state => !state)}>
         <a.div class="c front" style={{ opacity, transform: transform.interpolate(t => `${t} rotateX(180deg)`) }} />
-        <a.div class="c back" style={{ opacity: opacity.interpolate(o => 1 - o), transform }}>Hello</a.div>
+        <a.div class="c back" style={{ opacity: opacity.interpolate(o => 1 - o), transform }}>{props.title}</a.div>
     </div>
   )
 }
 
 class Grid extends Component {
-  state = { data }
-  render() {
-    return (
-        <div class="grid">
-            <Card />
-            <Card />
-        </div>
-    )
+    render() {
+        return (
+            <div class="grid">
+                {cards.map((card) => <Card {...card} />)}
+            </div>
+        )
   }
 }
 
