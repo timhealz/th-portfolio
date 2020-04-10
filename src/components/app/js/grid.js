@@ -4,7 +4,6 @@ import { useSpring, animated as a } from 'react-spring'
 
 import Header from './selector.js'
 import data from './data.js'
-
 import '../css/grid.css'
 
 function Card(props) {
