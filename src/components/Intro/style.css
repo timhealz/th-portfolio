@@ -1,0 +1,18 @@
+div.about {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 10% 10px 10%;
+}
+
+div p.intro {
+    font-size: 24px;
+    font-style: italic;
+}
+
+div.about img {
+    width: 300px;
+    height: auto;
+}

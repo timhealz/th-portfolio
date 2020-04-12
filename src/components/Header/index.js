@@ -3,13 +3,12 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
-import head from'./headshot_small.jpg';
-import './navbar.css';
+import './style.css';
 
-function NavBar() {
+function Header() {
   return (
-    <div class="navbar">
-      <div class="head"><a href="/"><img  src={head} /></a></div>
+    <div class="header">
+      <div class="head"><a href="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'} /></a></div>
       <div>
           <i class="icon"><a href="https://github.com/healyt22"><FontAwesomeIcon icon={faGithub} /></a></i>
           <i class="icon"><a href="https://twitter.com/healyt22"><FontAwesomeIcon icon={faTwitter} /></a></i>
@@ -19,4 +18,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Header;

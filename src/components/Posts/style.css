@@ -1,0 +1,21 @@
+* {
+    text-align: left;
+}
+
+div.posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.card {
+    width: 80%;
+    height: 200px;
+    background-color: white;
+    margin: 10px 0px 10px 0px;
+    cursor: pointer;
+}
+
+#title {
+    padding-left: 10px;
+}
