@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useSpring, animated as a } from 'react-spring'
 
-import Selector from '../Filter'
 import './style.css'
 
 
