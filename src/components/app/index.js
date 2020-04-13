@@ -6,7 +6,7 @@ import './style.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faIdBadge, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faIdBadge, faCode } from '@fortawesome/free-solid-svg-icons'
 import { faNewspaper } from '@fortawesome/free-regular-svg-icons'
 
 import About from '../About'
@@ -20,20 +20,19 @@ function App() {
               <div class="head"><a href="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt=""/></a></div>
               <div>
                   <Link to="/posts">
-                  <i class="icon"><FontAwesomeIcon icon={faNewspaper} /></i>
+                      <i class="icon"><FontAwesomeIcon icon={faNewspaper} /></i>
                   </Link>
-                  <Link to="/about">
-                  <i class="icon"><FontAwesomeIcon icon={faIdBadge} /></i>
+                      <Link to="/projects">
+                  <i class="icon"><FontAwesomeIcon icon={faCode} /></i>
                   </Link>
-                  <i class="icon"><a href="https://github.com/healyt22"><FontAwesomeIcon icon={faGithub} /></a></i>
-                  <i class="icon"><a href="https://twitter.com/healyt22"><FontAwesomeIcon icon={faTwitter} /></a></i>
-                  <i class="icon"><a href="https://linkedin.com/in/healyt22"><FontAwesomeIcon icon={faLinkedin} /></a></i>
-                  <i class="icon"><a><FontAwesomeIcon icon={faEnvelope} /></a></i>
+                  <a href="https://github.com/healyt22"><i class="icon"><FontAwesomeIcon icon={faGithub} /></i></a>
+                  <a href="https://twitter.com/healyt22"><i class="icon"><FontAwesomeIcon icon={faTwitter} /></i></a>
+                  <a href="https://linkedin.com/in/healyt22"><i class="icon"><FontAwesomeIcon icon={faLinkedin} /></i></a>
               </div>
             </div>
             <div class="content">
               <Switch>
-                  <Route path="/about">
+                  <Route exact path="/">
                       <About />
                   </Route>
                   <Route path="/posts">

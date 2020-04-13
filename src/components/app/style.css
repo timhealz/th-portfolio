@@ -12,18 +12,13 @@
     background-color: white;
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
 }
-    .icon {
+    i.icon {
         color: #BBBBBB;
         font-size: 28px;
         padding-right: 10px;
+        text-decoration: none;
     }
-    .icon a {
-        color: #BBBBBB;
-        font-size: 28px;
-    }
-    .icon:hover {
+    i.icon:hover {
         color: #001972;
     }
-    .icon:hover a {
-        color: #001972;
-    }
+
