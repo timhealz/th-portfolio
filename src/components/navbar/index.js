@@ -9,7 +9,7 @@ import './navbar.css';
 function NavBar() {
   return (
     <div class="navbar">
-      <div class="head"><a href="#index"><img  src={head} /></a></div>
+      <div class="head"><a href="/"><img  src={head} /></a></div>
       <div>
           <i class="icon"><a href="https://github.com/healyt22"><FontAwesomeIcon icon={faGithub} /></a></i>
           <i class="icon"><a href="https://twitter.com/healyt22"><FontAwesomeIcon icon={faTwitter} /></a></i>

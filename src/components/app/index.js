@@ -1,17 +1,16 @@
+// components/app/index.js
+
 import React from 'react';
-import logo from './logo.svg';
-import './app.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import Grid from './js/grid.js';
+import './css/app.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Under Construction...
-        </p>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Route exact path="/" component={Grid} />
+    </BrowserRouter>
   );
 }
 

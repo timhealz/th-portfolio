@@ -8,16 +8,16 @@ import NavBar from './components/navbar/'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <NavBar />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('navbar')
 );
 
 ReactDOM.render(
   <React.StrictMode>
-    <NavBar />
+    <App />
   </React.StrictMode>,
-  document.getElementById('navbar')
+  document.getElementById('app')
 );
 
 // If you want your app to work offline and load faster, you can change
