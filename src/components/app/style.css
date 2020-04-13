@@ -1,0 +1,30 @@
+* {
+    font-family: "Courier New", Courier, monospace;
+    font-style: italic;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px 5px 10px;
+    background-color: white;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+}
+    i.icon {
+        color: #BBBBBB;
+        font-size: 28px;
+        padding-right: 10px;
+        text-decoration: none;
+    }
+    i.icon:hover {
+        color: #001972;
+    }
+    i.icon-active {
+        color: #001972;
+        font-size: 28px;
+        padding-right: 10px;
+        text-decoration: none;
+    }
+
