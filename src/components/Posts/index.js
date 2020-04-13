@@ -17,8 +17,8 @@ const cards = [
     },
 ]
 
-const calc = (x, y) => [ -(y - window.innerHeight / 2) / 200,
-                         (x - window.innerWidth / 2) / 200,
+const calc = (x, y) => [ -(y - window.innerHeight / 2) / 500,
+                         (x - window.innerWidth / 2) / 500,
                          1.02 ]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
