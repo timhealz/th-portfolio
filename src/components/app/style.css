@@ -21,4 +21,10 @@
     i.icon:hover {
         color: #001972;
     }
+    i.icon-active {
+        color: #001972;
+        font-size: 28px;
+        padding-right: 10px;
+        text-decoration: none;
+    }
 
