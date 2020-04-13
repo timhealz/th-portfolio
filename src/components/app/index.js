@@ -16,7 +16,7 @@ function App() {
     return (
         <BrowserRouter>
             <div class="navbar">
-              <div class="head"><a href="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'} /></a></div>
+              <div class="head"><a href="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt=""/></a></div>
               <div>
                   <Link to="/about">
                   <i class="icon"><FontAwesomeIcon icon={faAddressCard} /></i>
