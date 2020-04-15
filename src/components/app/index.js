@@ -49,7 +49,7 @@ class App extends React.Component {
                     </Switch>
                 </div>
                 <div className="footer">
-                <p>Copywright &copy; {new Date().getFullYear()} Tim Healy</p>
+                <p>Copyright &copy; {new Date().getFullYear()} Tim Healy</p>
                 </div>
             </BrowserRouter>
         );
