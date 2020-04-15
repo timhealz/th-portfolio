@@ -1,6 +1,9 @@
 import React from 'react';
 import './style.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperclip } from '@fortawesome/free-solid-svg-icons'
+
 function Intro() {
     return (
         <div className="about">
