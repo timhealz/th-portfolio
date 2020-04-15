@@ -9,14 +9,16 @@ const cards = [
         title: 'Bootstrapping Handwritten Digits',
         tags: ['Statistics'],
         image: 'bootstrapped_digits.png',
-        date: 'December 19, 2019',
+        pdf: 'th_bootstrapping.pdf',
+        date: 'December 2019',
         description: 'Using the MNIST dataset, bootstrap sampling methods are employed to generate additional handwritten digits.'
     },
     {
         title: 'Deriving Political Party Affiliation With Diffusion Maps',
         tags: ['Statistics'],
         image: 'diffusion_maps.png',
-        date: 'August 3, 2019',
+        pdf: 'th_diffusion_maps.pdf',
+        date: 'August 2019',
         description: 'Diffusion Maps are utilized to reduce the dimensionality of textual data, using it to derive the political party for members of the United States Congress based on Twitter activity.'
     },
 ]
@@ -24,6 +26,7 @@ const cards = [
 function Card(props) {
     return (
         <div className="card">
+        <a href={process.env.PUBLIC_URL + 'pdfs/' + props.pdf}>
             <div>
                 <div className="header">
                     <h3>{props.title}</h3>
@@ -32,6 +35,7 @@ function Card(props) {
                 <p>{props.description}</p>
                 <FontAwesomeIcon icon={faTag} />
             </div>
+        </a>
         </div>
     )
 }
