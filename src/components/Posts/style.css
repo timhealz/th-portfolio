@@ -1,33 +1,36 @@
-* {
-    text-align: left;
-}
-
 div.posts {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    margin: 50px 10% 0px 10%;
+    margin: 50px 10% 50px 10%;
     height: auto;
 }
 
 div.card {
     width: 100%;
     max-width: 1000px;
-    height: 100px;
+    height: 100%;
     background-color: white;
     margin: 10px 0px 10px 0px;
+    padding: 10px 10px 10px 10px;
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.5s;
-    will-change: transform;
     cursor: pointer;
 }
 
-#title {
-    font-size: 14px;
+div.card-content {
+    padding: 20px 20px 20px 20px;
 }
 
-h3 {
-    margin: 20px 20% 20px 20px;
-    text-align: left;
+div.card:hover {
+    transform: scale(1.05);
 }
+
+div.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 3px #001972;
+}
+
+

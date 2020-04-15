@@ -1,47 +1,45 @@
 import React from 'react'
-import { useSpring, animated as a } from 'react-spring'
-
 import './style.css'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTag } from '@fortawesome/free-solid-svg-icons'
 
 const cards = [
     {
         title: 'Bootstrapping Handwritten Digits',
-        description: 'Statistics',
+        tags: ['Statistics'],
         image: 'bootstrapped_digits.png',
+        date: 'December 19, 2019',
+        description: 'Using the MNIST dataset, bootstrap sampling methods are employed to generate additional handwritten digits.'
     },
     {
         title: 'Deriving Political Party Affiliation With Diffusion Maps',
-        description: 'Statistics',
+        tags: ['Statistics'],
         image: 'diffusion_maps.png',
+        date: 'August 3, 2019',
+        description: 'Diffusion Maps are utilized to reduce the dimensionality of textual data, using it to derive the political party for members of the United States Congress based on Twitter activity.'
     },
 ]
 
-const calc = (x, y) => [ -(y - window.innerHeight / 2) / 500,
-                         (x - window.innerWidth / 2) / 500,
-                         1.02 ]
-const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
-
-function Card(args) {
-    const [props, set] = useSpring(() => ({
-            xys: [0, 0, 1],
-            config: { mass: 10, tension: 450, friction: 40 }
-        }))
+function Card(props) {
     return (
-        <a.div
-            class="card"
-            onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
-            onMouseLeave={() => set({ xys: [0, 0, 1] })}
-            style={{ transform: props.xys.interpolate(trans) }}
-        >
-          <h3 id="title">{args.title}</h3>
-        </a.div>
+        <div className="card">
+            <div className="card-content">
+                <div className="header">
+                    <h3>{props.title}</h3>
+                    <p>{props.date}</p>
+                </div>
+                <p>{props.description}</p>
+                <FontAwesomeIcon icon={faTag} />
+            </div>
+        </div>
     )
 }
 
 function Posts() {
     return (
         <div class="posts">
+            <h1>Posts</h1>
             {cards.map((card) => <Card {...card} />)}
         </div>
     )
