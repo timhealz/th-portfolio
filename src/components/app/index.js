@@ -32,17 +32,17 @@ class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <div class="navbar">
-                <div class="head"><a href="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt=""/></a></div>
-                <div class="icons">
-                    <Link to="/posts"><i class={this.state.classes[0]} onClick={() => this.handleClick(0)}><FontAwesomeIcon icon={faNewspaper} /></i></Link>
-                    <Link to="/projects"><i class={this.state.classes[1]} onClick={() => this.handleClick(1)}><FontAwesomeIcon icon={faCode} /></i></Link>
-                    <a href="https://github.com/healyt22"><i class="icon"><FontAwesomeIcon icon={faGithub} /></i></a>
-                    <a href="https://twitter.com/healyt22"><i class="icon"><FontAwesomeIcon icon={faTwitter} /></i></a>
-                    <a href="https://linkedin.com/in/healyt22"><i class="icon"><FontAwesomeIcon icon={faLinkedin} /></i></a>
+                <div className="navbar">
+                <div className="head"><a href="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt=""/></a></div>
+                <div className="icons">
+                    <Link to="/posts"><i className={this.state.classes[0]} onClick={() => this.handleClick(0)}><FontAwesomeIcon icon={faNewspaper} /></i></Link>
+                    <Link to="/projects"><i className={this.state.classes[1]} onClick={() => this.handleClick(1)}><FontAwesomeIcon icon={faCode} /></i></Link>
+                    <a href="https://github.com/healyt22"><i className="icon"><FontAwesomeIcon icon={faGithub} /></i></a>
+                    <a href="https://twitter.com/healyt22"><i className="icon"><FontAwesomeIcon icon={faTwitter} /></i></a>
+                    <a href="https://linkedin.com/in/healyt22"><i className="icon"><FontAwesomeIcon icon={faLinkedin} /></i></a>
                 </div>
                 </div>
-                <div class="content">
+                <div className="content">
                     <Switch>
                         <Route exact path="/"><About /></Route>
                         <Route path="/posts"><Posts /></Route>

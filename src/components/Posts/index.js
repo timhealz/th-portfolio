@@ -24,7 +24,7 @@ const cards = [
 function Card(props) {
     return (
         <div className="card">
-            <div className="card-content">
+            <div>
                 <div className="header">
                     <h3>{props.title}</h3>
                     <p>{props.date}</p>
@@ -38,7 +38,7 @@ function Card(props) {
 
 function Posts() {
     return (
-        <div class="posts">
+        <div className="posts">
             <h1>Posts</h1>
             {cards.map((card) => <Card {...card} />)}
         </div>
