@@ -6,7 +6,7 @@ import './style.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faIdBadge, faCode } from '@fortawesome/free-solid-svg-icons'
+import { faCode } from '@fortawesome/free-solid-svg-icons'
 import { faNewspaper } from '@fortawesome/free-regular-svg-icons'
 
 import About from '../About'
@@ -47,6 +47,9 @@ class App extends React.Component {
                         <Route exact path="/"><About /></Route>
                         <Route path="/posts"><Posts /></Route>
                     </Switch>
+                </div>
+                <div className="footer">
+                <p>Copywright &copy; {new Date().getFullYear()} Tim Healy</p>
                 </div>
             </BrowserRouter>
         );
