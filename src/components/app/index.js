@@ -1,7 +1,5 @@
-// components/App/index.js
-
-import React from 'react';
-import {BrowserRouter, Switch, Route, Link} from "react-router-dom";
+import React, { useState } from 'react';
+import { Switch, Route, Link, useLocation } from "react-router-dom";
 import './style.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,48 +10,43 @@ import { faNewspaper } from '@fortawesome/free-regular-svg-icons'
 import About from '../About'
 import Posts from '../Posts';
 
+function App() {
+    let path = useLocation().pathname;
+    let navText = mapNavText(path)
 
-const classes = ['icon', 'icon'];
-
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            classes: classes,
-        };
+    function mapNavText(location) {
+        if      (path == "/")               { return "Home" } 
+        else if (location == "/posts")      { return "Posts" }
+        else if (location == "/projects")   { return "Projects" }
+        else                                { return "Where are you?" }
     }
-    
-    handleClick(i) {
-        const classesCopy = classes.slice();
-        classesCopy[i] = 'icon-active'
-        this.setState({classes: classesCopy});
-    };
-    
-    render() {
-        return (
-            <BrowserRouter>
-                <div className="navbar">
-                <div className="head"><a href="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt=""/></a></div>
-                <div className="icons">
-                    <Link to="/posts"><i className={this.state.classes[0]} onClick={() => this.handleClick(0)}><FontAwesomeIcon icon={faNewspaper} /></i></Link>
-                    <Link to="/projects"><i className={this.state.classes[1]} onClick={() => this.handleClick(1)}><FontAwesomeIcon icon={faCode} /></i></Link>
-                    <a href="https://github.com/healyt22"><i className="icon"><FontAwesomeIcon icon={faGithub} /></i></a>
-                    <a href="https://twitter.com/healyt22"><i className="icon"><FontAwesomeIcon icon={faTwitter} /></i></a>
-                    <a href="https://linkedin.com/in/healyt22"><i className="icon"><FontAwesomeIcon icon={faLinkedin} /></i></a>
+
+    return (
+        <div>
+            <div className="navbar">
+                <Link to="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt=""/></Link>
+                <div className="menu">
+                    <h2>{navText}</h2>
+                    <div className="icons">
+                        <Link to="/posts"><i><FontAwesomeIcon icon={faNewspaper} className="icon" /></i></Link>
+                        <Link to="/projects"><i><FontAwesomeIcon icon={faCode} className="icon" /></i></Link>
+                        <a href="https://github.com/healyt22"><i><FontAwesomeIcon icon={faGithub} className="icon" /></i></a>
+                        <a href="https://twitter.com/healyt22"><i><FontAwesomeIcon icon={faTwitter} className="icon" /></i></a>
+                        <a href="https://linkedin.com/in/healyt22"><i><FontAwesomeIcon icon={faLinkedin} className="icon" /></i></a>
+                    </div>
                 </div>
-                </div>
-                <div className="content">
-                    <Switch>
-                        <Route exact path="/"><About /></Route>
-                        <Route path="/posts"><Posts /></Route>
-                    </Switch>
-                </div>
-                <div className="footer">
+            </div>
+            <div className="content">
+                <Switch>
+                    <Route exact path="/"><About /></Route>
+                    <Route path="/posts"><Posts /></Route>
+                </Switch>
+            </div>
+            <div className="footer">
                 <p>Copyright &copy; {new Date().getFullYear()} Tim Healy</p>
-                </div>
-            </BrowserRouter>
-        );
-    }
+            </div>
+        </div>
+    );
 }
 
 export default App;
