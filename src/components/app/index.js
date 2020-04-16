@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Switch, Route, Link, useLocation } from "react-router-dom";
 import './style.css';
 
@@ -11,14 +11,22 @@ import About from '../About'
 import Posts from '../Posts';
 
 function App() {
-    let location = useLocation();
-    console.log(location.pathname);
+    let path = useLocation().pathname;
+    let navText = mapNavText(path)
+
+    function mapNavText(location) {
+        if      (path == "/")               { return "Home" } 
+        else if (location == "/posts")      { return "Posts" }
+        else if (location == "/projects")   { return "Projects" }
+        else                                { return "Where are you?" }
+    }
+
     return (
         <div>
             <div className="navbar">
                 <Link to="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt=""/></Link>
                 <div className="menu">
-                    <div className="navtext"><h3>{location.pathname}</h3></div>
+                    <div className="navtext"><h2>{navText}</h2></div>
                     <div className="icons">
                         <Link to="/posts"><i><FontAwesomeIcon icon={faNewspaper} className="icon" /></i></Link>
                         <Link to="/projects"><i><FontAwesomeIcon icon={faCode} className="icon" /></i></Link>
