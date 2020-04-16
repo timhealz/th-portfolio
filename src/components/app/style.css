@@ -22,8 +22,9 @@ div.menu {
     padding-left: 20px;
 }
 
-div.menu p {
-    color: #001972;
+h2 {
+    border-bottom: solid 3px #001972;
+    display:inline-block; 
 }
 
 .icon {
@@ -35,7 +36,7 @@ div.menu p {
 .icon:hover {
     color: #001972;
 }
-.active .icon {
+.active-icon {
     color: #001972;
     font-size: 28px;
     padding-right: 10px;

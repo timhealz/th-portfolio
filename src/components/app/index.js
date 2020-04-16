@@ -26,7 +26,7 @@ function App() {
             <div className="navbar">
                 <Link to="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt=""/></Link>
                 <div className="menu">
-                    <div className="navtext"><h2>{navText}</h2></div>
+                    <h2>{navText}</h2>
                     <div className="icons">
                         <Link to="/posts"><i><FontAwesomeIcon icon={faNewspaper} className="icon" /></i></Link>
                         <Link to="/projects"><i><FontAwesomeIcon icon={faCode} className="icon" /></i></Link>

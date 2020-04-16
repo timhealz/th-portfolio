@@ -43,7 +43,6 @@ function Card(props) {
 function Posts() {
     return (
         <div className="posts">
-            <h1>Posts</h1>
             {cards.map((card) => <Card {...card} />)}
         </div>
     )
