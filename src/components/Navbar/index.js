@@ -9,12 +9,12 @@ import { faNewspaper } from '@fortawesome/free-regular-svg-icons'
 
 function Navbar() {
     let path = useLocation().pathname;
-    let navText = mapNavText(path)
+    let navText = mapNavText()
 
     function mapNavText(location) {
         if      (path === "/")               { return "Home" } 
-        else if (location === "/posts")      { return "Posts" }
-        else if (location === "/projects")   { return "Projects" }
+        else if (path === "/posts")      { return "Posts" }
+        else if (path === "/projects")   { return "Projects" }
         else                                 { return "Where are you?" }
     }
 
@@ -24,11 +24,15 @@ function Navbar() {
             <div className="menu">
                 <h2>{navText}</h2>
                 <div className="icons">
-                    <Link to="/posts"><i><FontAwesomeIcon icon={faNewspaper} className="icon" /></i></Link>
-                    <Link to="/projects"><i><FontAwesomeIcon icon={faCode} className="icon" /></i></Link>
-                    <a href="https://github.com/healyt22"><i><FontAwesomeIcon icon={faGithub} className="icon" /></i></a>
-                    <a href="https://twitter.com/healyt22"><i><FontAwesomeIcon icon={faTwitter} className="icon" /></i></a>
-                    <a href="https://linkedin.com/in/healyt22"><i><FontAwesomeIcon icon={faLinkedin} className="icon" /></i></a>
+                    <Link to="/posts">
+                        <FontAwesomeIcon icon={faNewspaper} className={path == "/posts" ? "active-icon" : "icon"} />
+                    </Link>
+                    <Link to="/projects">
+                        <FontAwesomeIcon icon={faCode} className={path == "/projects" ? "active-icon" : "icon"} />
+                    </Link>
+                    <a href="https://github.com/healyt22"><FontAwesomeIcon icon={faGithub} className="icon" /></a>
+                    <a href="https://twitter.com/healyt22"><FontAwesomeIcon icon={faTwitter} className="icon" /></a>
+                    <a href="https://linkedin.com/in/healyt22"><FontAwesomeIcon icon={faLinkedin} className="icon" /></a>
                 </div>
             </div>
         </div>
