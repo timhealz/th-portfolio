@@ -1,0 +1,37 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px 5px 10px;
+    background-color: white;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: auto;
+}
+
+div.menu {
+    height: 100%;
+    padding-left: 20px;
+}
+
+h2 {
+    border-bottom: solid 3px #001972;
+    display:inline-block; 
+}
+
+.icon {
+    color: #BBBBBB;
+    font-size: 28px;
+    padding-right: 10px;
+    text-decoration: none;
+}
+.icon:hover {
+    color: #001972;
+}
+.active-icon {
+    color: #001972;
+    font-size: 28px;
+    padding-right: 10px;
+    text-decoration: none;
+}
