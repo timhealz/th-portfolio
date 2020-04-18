@@ -15,10 +15,6 @@ div.card {
     cursor: pointer;
 }
 
-div.card:hover {
-    transform: scale(1.05);
-}
-
 div.header {
     display: flex;
     flex-direction: row;
