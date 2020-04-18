@@ -12,10 +12,10 @@ function Navbar() {
     let navText = mapNavText()
 
     function mapNavText(location) {
-        if      (path === "/")               { return "Home" } 
-        else if (path === "/posts")      { return "Posts" }
-        else if (path === "/projects")   { return "Projects" }
-        else                                 { return "Where are you?" }
+        if      (path === "/")          { return "Home" } 
+        else if (path === "/posts")     { return "Posts" }
+        else if (path === "/projects")  { return "Projects" }
+        else                            { return "Where are you?" }
     }
 
     return (
@@ -30,9 +30,15 @@ function Navbar() {
                     <Link to="/projects">
                         <FontAwesomeIcon icon={faCode} className={path == "/projects" ? "active-icon" : "icon"} />
                     </Link>
-                    <a href="https://github.com/healyt22"><FontAwesomeIcon icon={faGithub} className="icon" /></a>
-                    <a href="https://twitter.com/healyt22"><FontAwesomeIcon icon={faTwitter} className="icon" /></a>
-                    <a href="https://linkedin.com/in/healyt22"><FontAwesomeIcon icon={faLinkedin} className="icon" /></a>
+                    <a href="https://github.com/healyt22">
+                        <FontAwesomeIcon icon={faGithub} className="icon" />
+                    </a>
+                    <a href="https://twitter.com/healyt22">
+                        <FontAwesomeIcon icon={faTwitter} className="icon" />
+                    </a>
+                    <a href="https://linkedin.com/in/healyt22">
+                        <FontAwesomeIcon icon={faLinkedin} className="icon" />
+                    </a>
                 </div>
             </div>
         </div>
