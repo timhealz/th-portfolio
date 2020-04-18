@@ -12,10 +12,10 @@ function Navbar() {
     let navText = mapNavText()
 
     function mapNavText(location) {
-        if      (path === "/")          { return "Home" } 
-        else if (path === "/posts")     { return "Posts" }
-        else if (path === "/projects")  { return "Projects" }
-        else                            { return "Where are you?" }
+        if      (path === "/")                  { return "Home" }
+        else if (path.startsWith("/posts"))     { return "Posts" }
+        else if (path.startsWith("/projects"))  { return "Projects" }
+        else                                    { return "Where are you?" }
     }
 
     return (
