@@ -1,0 +1,24 @@
+div.article {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0px 5% 0px 5%;
+    padding: 20px 20px 20px 20px;
+}
+
+pre {
+    background: white;
+    border: 1px solid #ddd;
+    border-left: 3px solid #001972;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}

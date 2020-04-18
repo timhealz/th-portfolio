@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
+import './style.css'
+
+import MarkdownRender from '../MarkdownRender'
 
 class Article extends Component {
     constructor() {
@@ -16,7 +19,11 @@ class Article extends Component {
 
     render() {
         const { markdown } = this.state;
-        return <ReactMarkdown source={markdown} />;
+        return (
+            <div className="article">
+                <MarkdownRender source={markdown} />
+            </div>
+        )
     }
 }
 
