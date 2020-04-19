@@ -18,22 +18,28 @@
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    padding: 0px 20px 0px 20px;
+    padding-left: 10px;
 }
 
-h2 {
+div.navbox {
+    padding: 0px 10px 0px 10px;
+    min-width: 100px;
+}
+
+h3.navtext {
     border-bottom: solid 3px #001972;
+    display: inline-block;
 }
 
 .icons {
-    height: 80%;
+    padding: 0px 10px 0px 10px;
 }
 
 .icon {
     color: #BBBBBB;
     font-size: 24px;
-    padding-right: 10px;
     text-decoration: none;
+    padding: 0px 5px 0px 5px;
 }
 .icon:hover {
     color: #001972;
