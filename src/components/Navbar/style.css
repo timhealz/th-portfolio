@@ -47,6 +47,6 @@ h3.navtext {
 .active-icon {
     color: #001972;
     font-size: 24px;
-    padding-right: 10px;
     text-decoration: none;
+    padding: 0px 5px 0px 5px;
 }
