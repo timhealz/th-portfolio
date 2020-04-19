@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import './style.css';
 
 import Navbar from '../Navbar'
@@ -11,10 +11,8 @@ function App() {
         <div>
             <Navbar />
             <div className="content">
-                <Switch>
-                    <Route exact path="/"><About /></Route>
-                    <Route path="/posts"><Posts /></Route>
-                </Switch>
+                <Route exact path="/"><About /></Route>
+                <Route path="/posts"><Posts /></Route>
             </div>
             <div className="footer">
                 <p>Copyright &copy; {new Date().getFullYear()} Tim Healy</p>

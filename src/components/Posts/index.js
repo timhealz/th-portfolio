@@ -41,21 +41,19 @@ const diffmap = {
 
 function Posts() {
     return (
-        <div>
-            <Switch>
-                <Route exact path="/posts">
-                    <div className="posts">
-                        <Card {... bootstrap} />
-                        <Card {... diffmap} />
-                    </div>
-                </Route>
-                <Route path="/posts/bootstrapping-handwritten-digits">
-                    <Article markdown="bootstrapping-handwritten-digits.md" />
-                </Route>
-                <Route path="/posts/diffusion-maps">
-                    <Article markdown="diffusion-maps.md" />
-                </Route>
-            </Switch>
+        <div className="posts">
+            <Route exact path="/posts">
+                <div className="cards">
+                    <Card {... bootstrap} />
+                    <Card {... diffmap} />
+                </div>
+            </Route>
+            <Route path="/posts/bootstrapping-handwritten-digits">
+                <Article markdown="bootstrapping-handwritten-digits.md" />
+            </Route>
+            <Route path="/posts/diffusion-maps">
+                <Article markdown="diffusion-maps.md" />
+            </Route>
         </div>
     )
 }
