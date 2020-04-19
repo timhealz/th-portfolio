@@ -22,7 +22,9 @@ function Navbar() {
         <div className="navbar">
             <Link to="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt="Home"/></Link>
             <div className="menu">
-                <h2>{navText}</h2>
+                <div className="navbox">
+                    <h3 className="navtext">{navText}</h3>
+                </div>
                 <div className="icons">
                     <Link to="/posts">
                         <FontAwesomeIcon icon={faNewspaper} className={path.startsWith("/posts") ? "active-icon" : "icon"} />
