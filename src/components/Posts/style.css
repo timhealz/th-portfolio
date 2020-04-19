@@ -3,6 +3,14 @@ div.posts {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+div.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0px 5% 0px 5%;
     max-width: 800px;
 }
