@@ -20,15 +20,15 @@ function Navbar() {
 
     return (
         <div className="navbar">
-            <Link to="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt=""/></Link>
+            <Link to="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt="Home"/></Link>
             <div className="menu">
                 <h2>{navText}</h2>
                 <div className="icons">
                     <Link to="/posts">
-                        <FontAwesomeIcon icon={faNewspaper} className={path == "/posts" ? "active-icon" : "icon"} />
+                        <FontAwesomeIcon icon={faNewspaper} className={path.startsWith("/posts") ? "active-icon" : "icon"} />
                     </Link>
                     <Link to="/projects">
-                        <FontAwesomeIcon icon={faCode} className={path == "/projects" ? "active-icon" : "icon"} />
+                        <FontAwesomeIcon icon={faCode} className={path.startsWith("/projects") ? "active-icon" : "icon"} />
                     </Link>
                     <a href="https://github.com/healyt22">
                         <FontAwesomeIcon icon={faGithub} className="icon" />

@@ -32,7 +32,7 @@ const bootstrap = {
         description: 'Using the MNIST dataset, bootstrap sampling methods are employed to generate additional handwritten digits.'
     }
 const diffmap = {
-        title: 'Deriving Political Party Affiliation With Diffusion Maps',
+        title: 'Deriving Political Affiliation With Diffusion Maps',
         path: '/posts/diffusion-maps',
         tags: ['Statistics'],
         date: 'August 2019',

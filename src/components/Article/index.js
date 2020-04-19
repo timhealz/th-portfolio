@@ -35,7 +35,9 @@ class Article extends Component {
         return (
             <div className="article">
                 <MathJax.Provider input="tex">
-                    <ReactMarkdown {...this.state.newProps} source={this.state.markdown} />
+                <ReactMarkdown
+                    {...this.state.newProps}
+                    source = {this.state.markdown} />
                 </MathJax.Provider>
             </div>
         )
