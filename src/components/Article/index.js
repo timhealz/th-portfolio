@@ -4,8 +4,11 @@ import './style.css'
 import ReactMarkdown from 'react-markdown';
 import MathJax from 'react-mathjax';
 import RemarkMathPlugin from 'remark-math';
-import Highlight from 'react-highlight';
 
+import hljs from 'highlight.js'
+import python from 'highlight.js/lib/languages/python'
+import 'highlight.js/styles/color-brewer.css'
+hljs.registerLanguage('python', python)
 
 class Article extends Component {
     constructor(props) {
@@ -31,6 +34,20 @@ class Article extends Component {
             .then(res => res.text())
             .then(text => this.setState({ markdown: text }));
     }
+
+    componentDidMount() {
+        this.updateCodeSyntaxHighlighting();
+    }
+
+    componentDidUpdate() {
+        this.updateCodeSyntaxHighlighting();
+    }
+
+    updateCodeSyntaxHighlighting = () => {
+        document.querySelectorAll("pre code").forEach(block => {
+            hljs.highlightBlock(block);
+        });
+    };
 
     render() {
         return (
