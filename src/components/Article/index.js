@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import './style.css'
+
 import ReactMarkdown from 'react-markdown';
 import MathJax from 'react-mathjax';
 import RemarkMathPlugin from 'remark-math';
-import './style.css'
+import Highlight from 'react-highlight';
 
 
 class Article extends Component {
@@ -31,7 +33,6 @@ class Article extends Component {
     }
 
     render() {
-        const { markdown } = this.state;
         return (
             <div className="article">
                 <MathJax.Provider input="tex">
