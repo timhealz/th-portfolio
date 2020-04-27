@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 10px 0px 10px;
     background-color: white;
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
     position: fixed;
@@ -23,16 +23,12 @@
 
 div.navbox {
     padding: 0px 10px 0px 10px;
-    min-width: 100px;
+    min-width: 70px;
 }
 
-h3.navtext {
+h4.navtext {
     border-bottom: solid 3px #001972;
     display: inline-block;
-}
-
-.icons {
-    padding: 0px 10px 0px 10px;
 }
 
 .icon {

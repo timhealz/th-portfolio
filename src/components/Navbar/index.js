@@ -23,7 +23,7 @@ function Navbar() {
             <Link to="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt="Home"/></Link>
             <div className="menu">
                 <div className="navbox">
-                    <h3 className="navtext">{navText}</h3>
+                    <h4 className="navtext">{navText}</h4>
                 </div>
                 <div className="icons">
                     <Link to="/posts">
