@@ -49,7 +49,7 @@ function Posts() {
                 </div>
             </Route>
             <Route path="/posts/bootstrapping-handwritten-digits">
-                <Article markdown="bootstrapping-handwritten-digits.md" />
+                <Article markdown="bootstrapping-digits.md" />
             </Route>
             <Route path="/posts/diffusion-maps">
                 <Article markdown="diffusion-maps.md" />
