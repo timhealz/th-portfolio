@@ -29,7 +29,7 @@ class Article extends Component {
     }
 
     componentWillMount() {
-        const mdPath = require('../../articles/' + this.props.markdown)
+        const mdPath = require('../../content/' + this.props.markdown)
         fetch(mdPath)
             .then(res => res.text())
             .then(text => this.setState({ markdown: text }));
