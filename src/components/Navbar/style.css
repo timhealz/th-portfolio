@@ -2,47 +2,49 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 5px 10px 0px 10px;
+    justify-content: space-between;
+    padding: 10px 10px 0px 10px;
     background-color: white;
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
     position: fixed;
-    top: 1%;
-    left: 1%;
-    right: 1%;
+    height: 50px;
+    top: 0%;
+    left: 0%;
+    right: 0%;
 }
 
-.menu {
+div.picname {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    padding-left: 10px;
+}
+
+h3 {
+    font-size: 18px;
+    padding: 10px 5px 5px 10px;
 }
 
 div.navbox {
-    padding: 0px 10px 0px 10px;
-    min-width: 70px;
+    display: flex;
+    flex-direction: row;
 }
 
-h4.navtext {
-    border-bottom: solid 3px #001972;
-    display: inline-block;
-}
-
-.icon {
+.navLink {
     color: #BBBBBB;
-    font-size: 24px;
-    text-decoration: none;
-    padding: 0px 5px 0px 5px;
+    font-size: 18px;
+    padding: 10px 5px 5px 10px;
 }
-.icon:hover {
-    color: #001972;
+.navLink:hover {
+    font-size: 18px;
+    padding: 10px 5px 5px 10px;
+    border-bottom: solid 3px #001972;
 }
-.active-icon {
-    color: #001972;
-    font-size: 24px;
-    text-decoration: none;
-    padding: 0px 5px 0px 5px;
+.active-navLink {
+    font-size: 18px;
+    border-bottom: solid 3px #001972;
+    padding: 10px 5px 5px 10px;
+}
+
+img {
+    height: 50px;
+    width: auto;
 }
