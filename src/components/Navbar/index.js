@@ -8,12 +8,6 @@ function Navbar() {
 
     return (
         <div className="navbar">
-        <div className="picname">
-            <Link to="/">
-                <img src={process.env.PUBLIC_URL + 'images/headshot.jpg'}
-                alt="Home"/>
-            </Link>
-            </div>
             <div className="navbox">
                 <Link to="/">
                     <h3 className={

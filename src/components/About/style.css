@@ -6,13 +6,6 @@ div.about {
     justify-content: center;
 }
 
-div.name {
-    width: 100%;
-    padding: 20px 20px 20px 20px;
-    background-color: white;
-    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
-}
-
 div.intro {
     max-width: 600px;
     width: inherit;
@@ -23,14 +16,8 @@ div.intro {
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
 }
 
-div.top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+div.intro h1 {
     border-bottom: solid 3px #001972;
-    height: 75px;
 }
 
 div.spacer {
@@ -44,15 +31,4 @@ div.about img {
     height: auto;
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
     margin-top: 20px;
-}
-
-.icon {
-    color: #BBBBBB;
-    font-size: 24px;
-    padding: 10px 5px 5px 0px;
-}
-.icon:hover {
-    color: #001972;
-    font-size: 24px;
-    padding: 10px 5px 5px 0px;
 }
