@@ -23,6 +23,16 @@ div.intro {
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
 }
 
+div.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: solid 3px #001972;
+    height: 75px;
+}
+
 div.spacer {
     width: 20px;
     height: 20px;
@@ -36,6 +46,13 @@ div.about img {
     margin-top: 20px;
 }
 
-h1 {
-    border-bottom: solid 3px #001972;
+.icon {
+    color: #BBBBBB;
+    font-size: 24px;
+    padding: 10px 5px 5px 0px;
+}
+.icon:hover {
+    color: #001972;
+    font-size: 24px;
+    padding: 10px 5px 5px 0px;
 }
