@@ -2,9 +2,7 @@ August 2019
 
 ## Deriving Political Affiliation With Diffusion Maps
 
-### Abstract
-
-Natural language processing has a large computational burden due to the high dimensionality and sparsity of textual data. Diffusion Maps is a mathematical technique that can be used to reduce the dimensionality of data, even if the data has been sampled from a nonlinear underlying structure. This paper will employ and evaluate Diffusion maps as a dimensionality reduction technique for textual data, using it to derive the political party for members of the United States Congress based on Twitter activity.
+Diffusion Maps is a mathematical technique that can be used to reduce the dimensionality of data, even if the data follows a nonlinear underlying structure. This analysis will evaluate Diffusion maps as a dimensionality reduction technique for textual data, using it to derive the political party for members of the United States Congress based on Twitter activity.
 
 ### Introduction & Motivation
 
@@ -32,20 +30,21 @@ Feature extraction methodologies can be further divided into techniques accounti
 
 A good data structure to show how Diffusion Maps can be useful is the "swiss roll". Below, 4000 points are sampled along a nonlinear underlying geometry resembling a swiss roll. If we were to "zoom in" on a particular area of this structure, the local space would appear linear; that is, Euclidean distance could be used to accurately measure distance between points.
 
+First let's generate some data.
 ```python
 import numpy as np
-from mpl_toolkits import mplot3d
-import matplotlib.pyplot as plt
-from matplotlib.pyplot import figure
-%matplotlib inline
-
-fig = plt.figure(figsize=(12,12))
 np.random.seed(0)
 
 noise = 0.1
 h = 60 * np.random.rand(n, 1)
 t = (3*np.pi/2)*(1 + 2*np.random.rand(n, 1))
 X = np.hstack((t*np.cos(t), h, t*np.sin(t))) + noise*np.random.rand(n, 3)
+```
+
+```python
+from mpl_toolkits import mplot3d
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import figure
 
 ax = fig.add_subplot(projection='3d')
 ax = plt.axes(projection='3d')
