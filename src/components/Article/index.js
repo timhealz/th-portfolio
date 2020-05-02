@@ -7,7 +7,7 @@ import RemarkMathPlugin from 'remark-math';
 
 import hljs from 'highlight.js'
 import python from 'highlight.js/lib/languages/python'
-import 'highlight.js/styles/color-brewer.css'
+import 'highlight.js/styles/vs.css'
 hljs.registerLanguage('python', python)
 
 class Article extends Component {
