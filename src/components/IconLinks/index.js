@@ -7,7 +7,7 @@ import { faGithub, faTwitter, faLinkedin, faStackOverflow } from '@fortawesome/f
 function IconLinks() {
     return (
         <div className="icons">
-            <a href="https://github.com/healyt22">
+            <a href="https://github.com/timhealz">
                 <FontAwesomeIcon icon={faGithub}
                     className="icon" />
             </a>
@@ -15,7 +15,7 @@ function IconLinks() {
                 <FontAwesomeIcon icon={faStackOverflow}
                     className="icon" />
             </a>
-            <a href="https://twitter.com/healyt22">
+            <a href="https://twitter.com/timhealz">
                 <FontAwesomeIcon icon={faTwitter}
                     className="icon" />
             </a>
