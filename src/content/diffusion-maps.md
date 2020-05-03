@@ -31,7 +31,7 @@ Feature extraction methodologies can be further divided into techniques accounti
 A good data structure to show how Diffusion Maps can be useful is the "swiss roll". Below, 4000 points are sampled along a nonlinear underlying geometry resembling a swiss roll. If we were to "zoom in" on a particular area of this structure, the local space would appear linear; that is, Euclidean distance could be used to accurately measure distance between points.
 
 First let's generate some data.
-```python
+```py
 import numpy as np
 np.random.seed(0)
 
@@ -41,7 +41,7 @@ t = (3*np.pi/2)*(1 + 2*np.random.rand(n, 1))
 X = np.hstack((t*np.cos(t), h, t*np.sin(t))) + noise*np.random.rand(n, 3)
 ```
 
-```python
+```py
 from mpl_toolkits import mplot3d
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
@@ -52,8 +52,6 @@ x = X[:,0]; y = X[:,1]; z = X[:,2]
 ax.scatter3D(x, y, z, c=t[:,0])
 ```
 
-![](/images/diffusion_maps/swiss_roll.png)
-
 Globally, Euclidean distance cannot be used since geodesic distance must be taken into account along the swiss roll manifold. Using the following visual example, Euclidean distance will indicate that the distance between a yellow point and a blue point would be shorter than the distance between a yellow point and a green point. We can see from the nonlinear structure of the data that this is not possible; a distance measure must travel along the swiss roll when measuring distance.
 
 Therefore, a useful reduction in dimensionality would be to "unroll" the swiss roll, since it would preserve the geodesic distances between points along the spiral. Additionally, with an unrolled structure, we are free to use a Euclidean distance measure since the nonlinear geometry of the data is accounted for.
@@ -62,7 +60,7 @@ Therefore, a useful reduction in dimensionality would be to "unroll" the swiss r
 
 In the below figure, Principal Component Analysis (PCA) with $k=2$ is applied to the swiss roll, and color mappings from Figure \ref{fig:swiss roll} are applied to the data. It is clear that geodesic distances are not preserved within PCA's linear subspace. Intuitively, it seems that PCA is simply "taking a picture" of the data from a linear window along two of the axes. Eucliden distance in this 2-dimensional space would tell us that yellow points are close to blue points, which we know is not the case according to the underlying structure of the data.
 
-```
+```py
 from sklearn.decomposition import PCA
 plt.figure(figsize=(12,12))
 
@@ -70,13 +68,11 @@ Y = PCA(n_components=2).fit_transform(X)
 plt.scatter(Y[:,0], Y[:,1], c=t[:,0])
 ```
 
-![](/images/diffusion_maps/swiss_roll_pca.png)
-
 #### Diffusion Maps
 
 In Figure \ref{fig:swiss roll dm}, we can see that the Diffusion Maps technique successfully "unrolls" the data, preserving the geodesic distances between points. It correctly embeds the data into a lower dimensional subspace along the nonlinear geometry. This reduction of dimensionality is especially useful we are now able to evaluate the data using linear methods, since the subspace is Euclidean.
 
-```
+```py
 plt.figure(figsize=(12,12))
 eps = 3
 
@@ -91,5 +87,3 @@ V = V/V[:,0]
 
 plt.scatter(V[:,1], V[:,2], c=t[:,0])
 ```
-
-![](/images/diffusion_maps/swiss_roll_dm.png)
