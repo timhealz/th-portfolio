@@ -11,6 +11,7 @@ function Posts() {
     return (
         <div className="posts">
             <Route exact path="/posts">
+                <h1>Posts</h1>
                 <div className="cards">
                     { metadata.map((postData) => <PostCard {... postData} /> )}
                 </div>

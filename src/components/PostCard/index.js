@@ -11,8 +11,8 @@ function PostCard(props) {
         <div className="card">
             <div>
                 <div className="header">
-                    <h3>{props.title}</h3>
                     <p>{props.date}</p>
+                    <h3>{props.title}</h3>
                 </div>
                 <p>{props.description}</p>
                 <FontAwesomeIcon icon={faTag} />
