@@ -1,3 +1,7 @@
+div.card {
+    border-radius: 4px;
+}
+
 a {
     color: inherit;
     text-decoration: inherit;
@@ -5,4 +9,11 @@ a {
 
 div.header {
     border-bottom: solid 3px #001972;
+}
+
+div.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }

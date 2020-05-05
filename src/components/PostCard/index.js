@@ -9,12 +9,12 @@ function PostCard(props) {
     return (
         <Link to={props.path}>
         <div className="card">
-            <div>
-                <div className="header">
-                    <p>{props.date}</p>
-                    <h3>{props.title}</h3>
-                </div>
-                <p>{props.description}</p>
+            <div className="header">
+                <h3>{props.title}</h3>
+            </div>
+            <div className="bottom">
+                {/*<p>{props.description}</p>*/}
+                <p>{props.date}</p>
                 <FontAwesomeIcon icon={faTag} />
             </div>
         </div>
