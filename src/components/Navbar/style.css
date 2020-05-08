@@ -8,13 +8,15 @@
     border-radius: 4px;
     position: fixed;
     height: 70px;
-    left: 1%;
-    right: 1%;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 div.navbox {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     padding: 0px 10px 0px 20px;
 }
 

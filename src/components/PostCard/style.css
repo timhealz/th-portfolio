@@ -8,7 +8,20 @@ a {
 }
 
 div.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: solid 3px #001972;
+}
+
+div.header h2 {
+    font-size: medium;
+}
+
+
+div.header p {
+    font-size: smaller;
 }
 
 div.bottom {
