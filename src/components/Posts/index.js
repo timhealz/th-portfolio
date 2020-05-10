@@ -3,7 +3,8 @@ import { Route } from "react-router-dom";
 import './style.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPython, faJava, faRProject, faDocker } from '@fortawesome/free-brands-svg-icons'
+import { faPython, faRProject } from '@fortawesome/free-brands-svg-icons'
+import { faRobot, faChartArea } from '@fortawesome/free-solid-svg-icons'
 
 import PostCard from '../PostCard'
 import Article from '../Article'
@@ -11,27 +12,27 @@ import postMetadata from './metadata'
 
 
 function Posts() {
-    const [search, setSearch] = useState("");
-    const [filteredTags, setFilteredTags] = useState([])
+    const [searchTerm, setSearchTerm] = useState("");
+    const [filterTags, setFilterTags] = useState([])
 
     const posts = [];
     postMetadata.slice().forEach((post) => {
-        if (!postContainsTags(filteredTags, post.tags)) {
+        if (!postContainsTags(filterTags, post.tags)) {
             return;
         }
-        if (post.title.toLowerCase().includes(search.toLowerCase())) {
+        if (post.title.toLowerCase().includes(searchTerm.toLowerCase())) {
             posts.push(post);
         }
     });
 
     function handleTagClick(tag) {
-        let updatedTags = filteredTags.slice();
+        let updatedTags = filterTags.slice();
         if (updatedTags.includes(tag)) {
             updatedTags = updatedTags.filter(e => e !== tag);
         } else {
             updatedTags.push(tag)
         }
-        setFilteredTags(updatedTags);
+        setFilterTags(updatedTags);
     }
 
     function postContainsTags(tagQuery, postTags){
@@ -45,29 +46,43 @@ function Posts() {
     return (
         <div className="posts">
         <Route exact path="/posts">
-            <h1>Posts</h1>
-            <div className="filter-container">
-                <input className="search"
-                    onChange={ e => { setSearch(e.target.value); }}
-                    type="text"
-                    value={search}
-                    placeholder="Search"
-                />
+            <div className="tags-container">
+                <div className="tags-helmet">
+                    <h3>Tags:</h3>
+                </div>
                 <div className="tags">
-                    <span>Tags:</span>
-                    <FontAwesomeIcon
-                        onClick={() => { handleTagClick("python") }}
-                        icon={faPython} 
-                        className={filteredTags.includes("python") ? "active-tag-icon" : "tag-icon"}
-                    />
-                    <FontAwesomeIcon
-                        onClick={() => { handleTagClick("r") }}
-                        icon={faRProject} 
-                        className={filteredTags.includes("r") ? "active-tag-icon" : "tag-icon"}
-                    />
+                    <div className="tag" onClick={() => { handleTagClick("python") }} >
+                        <FontAwesomeIcon icon={faPython} 
+                            className={filterTags.includes("python") ? "active-tag-icon" : "tag-icon"}/>
+                        <span>Python</span>
+                    </div>
+                    <div className="tag" onClick={() => { handleTagClick("r") }} >
+                        <FontAwesomeIcon icon={faRProject} 
+                            className={filterTags.includes("r") ? "active-tag-icon" : "tag-icon"} />
+                        <span>R</span>
+                    </div>
+                    <div className="tag" onClick={() => { handleTagClick("machine-learning") }} >
+                        <FontAwesomeIcon icon={faRobot} 
+                            className={filterTags.includes("machine-learning") ? "active-tag-icon" : "tag-icon"} />
+                        <span>Machine Learning</span>
+                    </div>
+                    <div className="tag" onClick={() => { handleTagClick("statistics") }} >
+                        <FontAwesomeIcon icon={faChartArea} 
+                            className={filterTags.includes("statistics") ? "active-tag-icon" : "tag-icon"} />
+                        <span>Statistics</span>
+                    </div>
                 </div>
             </div>
             <div className="cards">
+                <div className="posts-helmet">
+                    <h1>Posts</h1>
+                    <input className="search"
+                        onChange={ e => { setSearchTerm(e.target.value); }}
+                        type="text"
+                        value={searchTerm}
+                        placeholder="Search"
+                    />
+                </div>
                 { posts.map((post) => <PostCard {... post} /> )}
             </div>
         </Route>

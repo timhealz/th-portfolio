@@ -11,7 +11,7 @@ export default [
         title: 'Deriving Political Affiliation With Diffusion Maps',
         path: '/posts/diffusion-maps',
         markdown: 'diffusion-maps.md',
-        tags: ['statistics', 'python'],
+        tags: ['machine-learning', 'python'],
         date: 'August 2019',
         description: 'Diffusion Maps are utilized to reduce the dimensionality of textual data, using it to derive the political party for members of the United States Congress based on Twitter activity.'
     }
