@@ -12,22 +12,35 @@ import postMetadata from './metadata'
 
 function Posts() {
     const [search, setSearch] = useState("");
-    const [pythonTag, setPythonTag] = useState(false);
-    const [rTag, setRTag] = useState(false);
-    console.log(search, pythonTag, rTag)
+    const [filteredTags, setFilteredTags] = useState([])
 
-    let searchPosts = postMetadata.slice().filter(post => {
-        return (
-            post.title.toLowerCase().includes(search.toLowerCase())
-        )
+    const posts = [];
+    postMetadata.slice().forEach((post) => {
+        if (!postContainsTags(filteredTags, post.tags)) {
+            return;
+        }
+        if (post.title.toLowerCase().includes(search.toLowerCase())) {
+            posts.push(post);
+        }
     });
 
-    let posts = searchPosts.filter(post => {
-        return (
-            pythonTag ? post.tags.includes("python") : true &&
-            rTag ? post.tags.includes("r") : true
-        )
-    })
+    function handleTagClick(tag) {
+        let updatedTags = filteredTags.slice();
+        if (updatedTags.includes(tag)) {
+            updatedTags = updatedTags.filter(e => e !== tag);
+        } else {
+            updatedTags.push(tag)
+        }
+        setFilteredTags(updatedTags);
+    }
+
+    function postContainsTags(tagQuery, postTags){
+        for(var i = 0; i < tagQuery.length; i++){
+          if(postTags.indexOf(tagQuery[i]) === -1)
+             return false;
+        }
+        return true;
+      }
 
     return (
         <div className="posts">
@@ -43,14 +56,14 @@ function Posts() {
                 <div className="tags">
                     <span>Tags:</span>
                     <FontAwesomeIcon
-                        onClick={() => { setPythonTag(!pythonTag) }}
+                        onClick={() => { handleTagClick("python") }}
                         icon={faPython} 
-                        className={pythonTag ? "active-tag-icon" : "tag-icon"}
+                        className={filteredTags.includes("python") ? "active-tag-icon" : "tag-icon"}
                     />
                     <FontAwesomeIcon
-                        onClick={() => { setRTag(!rTag) }}
+                        onClick={() => { handleTagClick("r") }}
                         icon={faRProject} 
-                        className={rTag ? "active-tag-icon" : "tag-icon"}
+                        className={filteredTags.includes("r") ? "active-tag-icon" : "tag-icon"}
                     />
                 </div>
             </div>
