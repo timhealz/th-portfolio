@@ -7,21 +7,17 @@ a {
     text-decoration: inherit;
 }
 
-div.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: solid 3px #001972;
+h3.header {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
-div.header h2 {
-    font-size: medium;
-}
-
-
-div.header p {
-    font-size: smaller;
+div.bottom span.date {
+    font-size: 1rem;
+    display: block;
+    color: rgba(0,0,0,.4);
+    font-weight: 400;
 }
 
 div.bottom {
@@ -29,4 +25,12 @@ div.bottom {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+div.card {
+    background-color: white;
+    margin: 5px 0px 5px 0px;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }

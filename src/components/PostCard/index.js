@@ -7,11 +7,9 @@ function PostCard(props) {
     return (
         <Link to={props.path}>
         <div className="card">
-            <div className="header">
-                <h2>{props.title}</h2>
-                <p>{props.date}</p>
-            </div>
+            <h3 className="header">{props.title}</h3>
             <div className="bottom">
+                <span className="date">{props.date}</span>
                 {/*<p>{props.description}</p>*/}
             </div>
         </div>
