@@ -55,6 +55,7 @@ div.tags span {
     font-size: 30px;
     font-weight: bold;
     padding: 0px 5px 0px 5px;
+    cursor: pointer;
 }
 .active-tag-icon {
     color: #001972;
@@ -63,14 +64,6 @@ div.tags span {
     padding: 0px 5px 0px 5px;
     cursor: pointer;
 }
-.tag-icon:hover {
-    color: #001972;
-    font-size: 30px;
-    font-weight: bold;
-    padding: 0px 5px 0px 5px;
-    cursor: pointer;
-}
-
 
 div.cards {
     display: flex;

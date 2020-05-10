@@ -11,57 +11,44 @@ import postMetadata from './metadata'
 
 
 function Posts() {
-    const [posts, setPosts] = useState(postMetadata);
     const [search, setSearch] = useState("");
     const [pythonTag, setPythonTag] = useState(false);
     const [rTag, setRTag] = useState(false);
-    
+    console.log(search, pythonTag, rTag)
+
+    let searchPosts = postMetadata.slice().filter(post => {
+        return (
+            post.title.toLowerCase().includes(search.toLowerCase())
+        )
+    });
+
+    let posts = searchPosts.filter(post => {
+        return (
+            pythonTag ? post.tags.includes("python") : true &&
+            rTag ? post.tags.includes("r") : true
+        )
+    })
+
     return (
         <div className="posts">
         <Route exact path="/posts">
             <h1>Posts</h1>
             <div className="filter-container">
                 <input className="search"
-                    onChange={ e => {
-                        const filterPosts = postMetadata.filter(post => {
-                            return post.title.toLowerCase().includes(e.target.value.toLowerCase());
-                        });
-                        setPosts(filterPosts);
-                        setSearch(e.target.value);
-                    }}
-                    type = "text"
-                    value = {search}
-                    placeholder = "Search"
+                    onChange={ e => { setSearch(e.target.value); }}
+                    type="text"
+                    value={search}
+                    placeholder="Search"
                 />
                 <div className="tags">
                     <span>Tags:</span>
                     <FontAwesomeIcon
-                        onClick={() => {
-                            setPythonTag(!pythonTag);
-                            if (!pythonTag) { 
-                                const filterPosts = postMetadata.filter(post => {
-                                    return post.tags.includes("python");
-                                });
-                                setPosts(filterPosts);
-                            } else {
-                                setPosts(postMetadata);
-                            }
-                        }}
+                        onClick={() => { setPythonTag(!pythonTag) }}
                         icon={faPython} 
                         className={pythonTag ? "active-tag-icon" : "tag-icon"}
                     />
                     <FontAwesomeIcon
-                        onClick={() => {
-                            setRTag(!rTag);
-                            if (!rTag) { 
-                                const filterPosts = postMetadata.filter(post => {
-                                    return post.tags.includes("r");
-                                });
-                                setPosts(filterPosts);
-                            } else {
-                                setPosts(postMetadata);
-                            }
-                        }}
+                        onClick={() => { setRTag(!rTag) }}
                         icon={faRProject} 
                         className={rTag ? "active-tag-icon" : "tag-icon"}
                     />
