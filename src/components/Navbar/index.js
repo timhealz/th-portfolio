@@ -2,38 +2,34 @@ import React from 'react';
 import { Link, useLocation } from "react-router-dom";
 import './style.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faCode } from '@fortawesome/free-solid-svg-icons'
-import { faNewspaper } from '@fortawesome/free-regular-svg-icons'
 
 function Navbar() {
     let path = useLocation().pathname;
-    let navText = mapNavText()
-
-    function mapNavText(location) {
-        if      (path === "/")               { return "Home" } 
-        else if (path === "/posts")      { return "Posts" }
-        else if (path === "/projects")   { return "Projects" }
-        else                                 { return "Where are you?" }
-    }
 
     return (
         <div className="navbar">
-            <Link to="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt=""/></Link>
-            <div className="menu">
-                <h2>{navText}</h2>
-                <div className="icons">
-                    <Link to="/posts">
-                        <FontAwesomeIcon icon={faNewspaper} className={path == "/posts" ? "active-icon" : "icon"} />
-                    </Link>
-                    <Link to="/projects">
-                        <FontAwesomeIcon icon={faCode} className={path == "/projects" ? "active-icon" : "icon"} />
-                    </Link>
-                    <a href="https://github.com/healyt22"><FontAwesomeIcon icon={faGithub} className="icon" /></a>
-                    <a href="https://twitter.com/healyt22"><FontAwesomeIcon icon={faTwitter} className="icon" /></a>
-                    <a href="https://linkedin.com/in/healyt22"><FontAwesomeIcon icon={faLinkedin} className="icon" /></a>
+            <Link to="/">
+                <div className="home">
+                    <img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt=""/>
+                    <div className="name"><h2>Tim Healy</h2></div>
                 </div>
+            </Link>
+            <div className="navbox">
+                <Link to="/">
+                    <h3 className={
+                        path == "/" ? "active-navLink" : "navLink"
+                    }>Home</h3>
+                </Link>
+                <Link to="/posts">
+                    <h3 className={
+                        path.startsWith("/posts") ? "active-navLink" : "navLink"
+                    }>Posts</h3>
+                </Link>
+                <Link to="/projects">
+                    <h3 className={
+                        path.startsWith("/projects") ? "active-navLink" : "navLink"
+                    }>Projects</h3>
+                </Link>
             </div>
         </div>
     );

@@ -1,0 +1,12 @@
+div.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.construction {
+    font-size: 64px;
+    color: #001972;
+    padding: 50px 50px 0px 50px;
+}
