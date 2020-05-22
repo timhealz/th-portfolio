@@ -11,7 +11,7 @@ function IconLinks() {
                 <FontAwesomeIcon icon={faGithub}
                     className="icon" />
             </a>
-            <a href="https://stackoverflow.com/users/7214439/healyt22">
+            <a href="https://stackoverflow.com/users/7214439/timhealz">
                 <FontAwesomeIcon icon={faStackOverflow}
                     className="icon" />
             </a>

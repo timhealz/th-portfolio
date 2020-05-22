@@ -4,7 +4,7 @@ import './style.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPython, faRProject } from '@fortawesome/free-brands-svg-icons'
-import { faRobot, faChartArea } from '@fortawesome/free-solid-svg-icons'
+import { faRobot, faChartArea, faMountain } from '@fortawesome/free-solid-svg-icons'
 
 import PostCard from '../PostCard'
 import Article from '../Article'
@@ -61,10 +61,10 @@ function Posts() {
                             className={filterTags.includes("r") ? "active-tag-icon" : "tag-icon"} />
                         <span>R</span>
                     </div>
-                    <div className="tag" onClick={() => { handleTagClick("machine-learning") }} >
-                        <FontAwesomeIcon icon={faRobot} 
-                            className={filterTags.includes("machine-learning") ? "active-tag-icon" : "tag-icon"} />
-                        <span>Machine Learning</span>
+                    <div className="tag" onClick={() => { handleTagClick("data-mining") }} >
+                        <FontAwesomeIcon icon={faMountain} 
+                            className={filterTags.includes("data-mining") ? "active-tag-icon" : "tag-icon"} />
+                        <span>Data Mining</span>
                     </div>
                     <div className="tag" onClick={() => { handleTagClick("statistics") }} >
                         <FontAwesomeIcon icon={faChartArea} 
