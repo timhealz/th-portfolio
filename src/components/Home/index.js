@@ -5,7 +5,6 @@ import './style.css';
 function Home() {
     return (
         <div className="homepage">
-            <h1 className="greeting">Hi, I'm Tim Healy</h1>
             <div className="intro">
                 <div className="intro-cards">
                     <h2>About Me</h2>

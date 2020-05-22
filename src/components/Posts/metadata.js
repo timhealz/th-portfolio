@@ -2,6 +2,7 @@ export default [
     {
         title: 'Bootstrapping Handwritten Digits',
         path: '/posts/bootstrapping-handwritten-digits',
+        pdf: 'th_bootstrapping.pdf',
         markdown: 'bootstrapping-digits.md',
         tags: ['statistics', 'r'],
         date: 'December 2019',
@@ -10,6 +11,7 @@ export default [
     {
         title: 'Deriving Political Affiliation With Diffusion Maps',
         path: '/posts/diffusion-maps',
+        pdf: 'th_diffusion_maps.pdf',
         markdown: 'diffusion-maps.md',
         tags: ['data-mining', 'python'],
         date: 'August 2019',

@@ -5,7 +5,7 @@ import './style.css'
 
 function PostCard(props) {
     return (
-        <Link to={props.path}>
+        <a href={process.env.PUBLIC_URL + 'pdfs/' + props.pdf}>
         <div className="card">
             <h3 className="header">{props.title}</h3>
             <div className="bottom">
@@ -13,7 +13,7 @@ function PostCard(props) {
                 {/*<p>{props.description}</p>*/}
             </div>
         </div>
-        </Link>
+        </a>
     )
 }
 

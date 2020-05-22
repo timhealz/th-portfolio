@@ -8,9 +8,12 @@ function Navbar() {
 
     return (
         <div className="navbar">
-            <div className="home">
-            <Link to="/"><img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt=""/></Link>
-            </div>
+            <Link to="/">
+                <div className="home">
+                    <img src={process.env.PUBLIC_URL + 'images/headshot_small.jpg'}  alt=""/>
+                    <div className="name"><h2>Tim Healy</h2></div>
+                </div>
+            </Link>
             <div className="navbox">
                 <Link to="/">
                     <h3 className={
